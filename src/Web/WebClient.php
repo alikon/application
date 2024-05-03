@@ -172,8 +172,8 @@ class WebClient
     public function __construct($userAgent = null, $acceptEncoding = null, $acceptLanguage = null)
     {
         // If no explicit user agent string was given attempt to use the implicit one from server environment.
-        if (empty($userAgent) && isset($_SERVER['HTTP_USER_AGENT'])) {
-            $this->userAgent = $_SERVER['HTTP_USER_AGENT'];
+        if (empty($userAgent)) {
+            $this->userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
         } else {
             $this->userAgent = $this->userAgent ?? '';
         }
