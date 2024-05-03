@@ -175,7 +175,7 @@ class WebClient
         if (empty($userAgent)) {
             $this->userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
         } else {
-            $this->userAgent = $this->userAgent ?? '';
+            $this->userAgent = $userAgent;
         }
 
         // If no explicit acceptable encoding string was given attempt to use the implicit one from server environment.
